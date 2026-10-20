@@ -2,7 +2,7 @@ import { describe, it, expect } from "vitest";
 import { readdirSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 
-const PROJECT_ID = "8fc69c82-9498-4b5c-98c9-5fd16ee9fc19";
+const PROJECT_ID = "5d8f6418-de54-42c3-83f1-4c646eb2b3c0";
 const dir = join(__dirname, "../assets");
 const required = ["restored-iss-video.mp4", "goddard-v2.jpg", "oppenheimer-v2.jpg", "restored-boss.png", "restored-boss-portrait.png", "restored-boss-portrait-v2.png"];
 const legacy = new Set(["iss-video.mp4.asset.json", "goddard.jpg.asset.json", "oppenheimer.jpg.asset.json", "boss.png.asset.json", "boss-portrait.png.asset.json", "boss-portrait-v2.png.asset.json", "restored-goddard.jpg.asset.json", "restored-oppenheimer.jpg.asset.json"]);
