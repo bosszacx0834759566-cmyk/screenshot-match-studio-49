@@ -326,8 +326,8 @@ html::-webkit-scrollbar, body::-webkit-scrollbar { display: none; width: 0; heig
 /* ===== Founder portrait (The Name / leadership section) ===== */
 .founder-portrait { position: relative; width: 100%; max-width: 280px; margin-inline: auto; aspect-ratio: 3 / 4; overflow: hidden; background: var(--ink-2); }
 .founder-portrait-img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top;
-  filter: grayscale(1) contrast(1.1); transition: transform 1.2s var(--ease-out), filter 1.2s var(--ease-out); }
-.founder-portrait-wrap:hover .founder-portrait-img { transform: scale(1.04); filter: grayscale(0) contrast(1.05); }
+  transition: transform 1.2s var(--ease-out); }
+.founder-portrait-wrap:hover .founder-portrait-img { transform: scale(1.04); }
 .hud-corner { position: absolute; width: 18px; height: 18px; border: 0 solid var(--paper); z-index: 2; pointer-events: none; }
 .hud-corner.tl { top: 10px; left: 10px; border-top-width: 1px; border-left-width: 1px; }
 .hud-corner.tr { top: 10px; right: 10px; border-top-width: 1px; border-right-width: 1px; }
