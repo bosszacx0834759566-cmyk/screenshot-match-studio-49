@@ -365,3 +365,17 @@ html::-webkit-scrollbar, body::-webkit-scrollbar { display: none; width: 0; heig
 .editorial-hero { font-size: 12px; line-height: 1.8; letter-spacing: 0; }
 .editorial-hero > span:first-child { font-size: 16px; font-variant-numeric: tabular-nums; }
 @media (max-width: 639px) { .editorial-strip { flex-direction: column; gap: 12px; padding-block: 20px; } .editorial-words { gap: 10px 20px; } }
+
+/* Futuristic origin panels */
+:root { --hud-glow: oklch(0.82 0.14 210); }
+.origin-panel { clip-path: polygon(24px 0, 100% 0, 100% calc(100% - 24px), calc(100% - 24px) 100%, 0 100%, 0 24px); }
+.origin-panel::after { content: ""; position: absolute; z-index: 3; inset: 0; pointer-events: none;
+  border: 1px solid color-mix(in oklab, var(--hud-glow) 45%, transparent);
+  box-shadow: inset 0 0 40px color-mix(in oklab, var(--hud-glow) 18%, transparent);
+  background: linear-gradient(180deg, transparent 0, color-mix(in oklab, var(--hud-glow) 35%, transparent) 50%, transparent 100%) 0 -120px / 100% 120px no-repeat;
+  animation: origin-scan 4.5s linear infinite; }
+.origin-panel:hover::after { border-color: var(--hud-glow); box-shadow: inset 0 0 60px color-mix(in oklab, var(--hud-glow) 30%, transparent), 0 0 30px color-mix(in oklab, var(--hud-glow) 40%, transparent); }
+.origin-panel:hover .origin-img { filter: grayscale(0) contrast(1.1) saturate(1.1); }
+.origin-hud > span { color: var(--hud-glow); text-shadow: 0 0 8px color-mix(in oklab, var(--hud-glow) 70%, transparent); }
+@keyframes origin-scan { to { background-position: 0 calc(100% + 120px); } }
+@media (prefers-reduced-motion: reduce) { .origin-panel::after { animation: none; } }
